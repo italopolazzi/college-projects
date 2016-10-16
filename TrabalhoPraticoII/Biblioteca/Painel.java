@@ -17,23 +17,24 @@ public class Painel extends javax.swing.JFrame {
 
     //CONFIGURAÇÕES DA EDITORA
     private int indexDoExemplarAtual;
-    private Exemplar exemplar_atual;
-    private ArrayList<Autor> autores_da_obra_atual = new ArrayList<>();
-    private Editora editora_atual;
-    
-    private static int idParaAtualizar = -1;    
+    private Exemplar exemplarAtual;
+    private ArrayList<Autor> autoresDaObraAtual = new ArrayList<>();
+    private Editora editoraAtual;
+
+    private static int idParaAtualizar = -1;
     private Identificadores ids = new Identificadores();
     private JFrame janelaTemp1, janelaTemp2;
-    private int tipoDePessoa; //0 = Autor, 1 = Cliente
-    private DefaultListModel 
-            model_c = new DefaultListModel(),
-            model_e = new DefaultListModel(), 
+    private int tipoDePessoa, tipoDeOperacao;
+    // tipo de pessoa = {0 = Autor, 1 = Cliente}
+    // tipo de operação = {0 = Registrar, 1 = Remover}
+    private DefaultListModel model_c = new DefaultListModel(),
+            model_e = new DefaultListModel(),
             model_a = new DefaultListModel(),
             model_o = new DefaultListModel();
     private ArrayList<Editora> editoras = new ArrayList<>();
     private ArrayList<Pessoa> clientes = new ArrayList<>(), autores = new ArrayList<>();
     private static Util util = new Util();
-    
+
     public Painel() {
         initComponents();
     }
@@ -562,6 +563,11 @@ public class Painel extends javax.swing.JFrame {
         lblRegEmprestimoExemplar.setText("Id do Exemplar:");
 
         btnRegEmprestimo.setText("Registrar");
+        btnRegEmprestimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegEmprestimoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelEmprestimosLayout = new javax.swing.GroupLayout(panelEmprestimos);
         panelEmprestimos.setLayout(panelEmprestimosLayout);
@@ -648,6 +654,11 @@ public class Painel extends javax.swing.JFrame {
         menuRegEmprestimo.add(jMenuItem7);
 
         jMenuItem8.setText("Remover");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         menuRegEmprestimo.add(jMenuItem8);
 
         menuRegistrar.add(menuRegEmprestimo);
@@ -687,9 +698,9 @@ public class Painel extends javax.swing.JFrame {
     private void addAutorAObra() {
         try {
             int id = Integer.parseInt(txfCriarObraAutores.getText());
-            for(Pessoa a : autores) {
-                if(a.getId() == id) {
-                    autores_da_obra_atual.add((Autor) a);
+            for (Pessoa a : autores) {
+                if (a.getId() == id) {
+                    autoresDaObraAtual.add((Autor) a);
                     JOptionPane.showMessageDialog(rootPane, "Autor adicionado com sucesso!");
                     txfCriarObraAutores.setText("");
                     return;
@@ -701,10 +712,10 @@ public class Painel extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Opps! Algo parece errado...");
         }
     }
-    
+
     private void menuGerEditorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGerEditorasActionPerformed
         model_e.clear();
-        for(Editora e : editoras){
+        for (Editora e : editoras) {
             //int id = model_e.getSize();
             model_e.add(model_e.getSize(), String.valueOf(e.getId()) + " - " + e.getNomeDaEditora());
         }
@@ -714,7 +725,7 @@ public class Painel extends javax.swing.JFrame {
 
     private void menuGerAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGerAutoresActionPerformed
         model_a.clear();
-        for(Pessoa a : autores){
+        for (Pessoa a : autores) {
             model_a.add(model_a.getSize(), String.valueOf(a.getId()) + " - " + a.getNome() + " " + a.getSobrenome());
         }
         listAutores.setModel(model_a);
@@ -723,7 +734,7 @@ public class Painel extends javax.swing.JFrame {
 
     private void menuGerClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGerClientesActionPerformed
         model_c.clear();
-        for(Pessoa c : clientes){
+        for (Pessoa c : clientes) {
             model_c.add(model_c.getSize(), String.valueOf(c.getId()) + " - " + c.getNome() + " " + c.getSobrenome());
         }
         listClientes.setModel(model_c);
@@ -761,54 +772,52 @@ public class Painel extends javax.swing.JFrame {
         Pessoa p;
         String n, s;
         int i, index, id = this.getIdParaAtualizar();
-        
+
         n = txfCriarPessoaNome.getText();
         s = txfCriarPessoaSobrenome.getText();
         i = Integer.parseInt(txfCriarPessoaIdade.getText());
-        
+
         //OPERAÇÃO DE ATUALIZAR
-        if(id != -1) {
-            if(tipoDePessoa == 0){
-                for(Pessoa a : autores) {
-                    if(a.getId() == id) {
+        if (id != -1) {
+            if (tipoDePessoa == 0) {
+                for (Pessoa a : autores) {
+                    if (a.getId() == id) {
                         a.setNome(n);
                         a.setSobrenome(s);
                         a.setIdade(i);
                     }
                 }
                 model_a.clear();
-                for(Pessoa a : autores) {
+                for (Pessoa a : autores) {
                     Util.addAoModeloDeLista(model_a, a.getId(), a.getNome(), a.getSobrenome());
                 }
-            } else if(tipoDePessoa == 1){
-                for(Pessoa c : clientes) {
-                    if(c.getId() == id) {
+            } else if (tipoDePessoa == 1) {
+                for (Pessoa c : clientes) {
+                    if (c.getId() == id) {
                         c.setNome(n);
                         c.setSobrenome(s);
                         c.setIdade(i);
                     }
                 }
                 model_c.clear();
-                for(Pessoa c : clientes) {
+                for (Pessoa c : clientes) {
                     Util.addAoModeloDeLista(model_c, c.getId(), c.getNome(), c.getSobrenome());
                 }
             }
             this.setIdParaAtualizar(-1);
             btnCriarPessoa.setText("Criar");
-            
-        //OPERAÇÃO DE CRIAR
-        } else {
-            if(tipoDePessoa == 0){
-                p = new Autor(ids.solicitarId(), n, s, i);
-                autores.add(p);
-                Util.addAoModeloDeLista(model_a, p.getId(), p.getNome(), p.getSobrenome());
-            } else if(tipoDePessoa == 1){
-                p = new Cliente(ids.solicitarId(), n, s, i);
-                clientes.add(p);
-                Util.addAoModeloDeLista(model_c, p.getId(), p.getNome(), p.getSobrenome());
-            }        
+
+            //OPERAÇÃO DE CRIAR
+        } else if (tipoDePessoa == 0) {
+            p = new Autor(ids.solicitarId(), n, s, i);
+            autores.add(p);
+            Util.addAoModeloDeLista(model_a, p.getId(), p.getNome(), p.getSobrenome());
+        } else if (tipoDePessoa == 1) {
+            p = new Cliente(ids.solicitarId(), n, s, i);
+            clientes.add(p);
+            Util.addAoModeloDeLista(model_c, p.getId(), p.getNome(), p.getSobrenome());
         }
-        
+
         txfCriarPessoaNome.setText("");
         txfCriarPessoaSobrenome.setText("");
         txfCriarPessoaIdade.setText("");
@@ -826,10 +835,10 @@ public class Painel extends javax.swing.JFrame {
 
     private void btnEdiApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdiApagarActionPerformed
         int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o id para remover a Obra: "));
-        ArrayList<Obra> obras = editora_atual.getObras();
+        ArrayList<Obra> obras = editoraAtual.getObras();
         try {
-            for(Obra o : obras) {
-                if(o.getId() == id) {
+            for (Obra o : obras) {
+                if (o.getId() == id) {
                     int pos = obras.indexOf(o);
                     obras.remove(o);
                     model_o.remove(pos);
@@ -844,8 +853,8 @@ public class Painel extends javax.swing.JFrame {
     private void btnEdisApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdisApagarActionPerformed
         int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o id para remover a Editora: "));
         try {
-            for(Editora e : editoras) {
-                if(e.getId() == id) {
+            for (Editora e : editoras) {
+                if (e.getId() == id) {
                     int pos = editoras.indexOf(e);
                     editoras.remove(e);
                     model_e.remove(pos);
@@ -860,8 +869,8 @@ public class Painel extends javax.swing.JFrame {
     private void btnAutApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAutApagarActionPerformed
         int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o id para remover o(a) autor(a): "));
         try {
-            for(Pessoa a : autores) {
-                if(a.getId() == id) {
+            for (Pessoa a : autores) {
+                if (a.getId() == id) {
                     int pos = autores.indexOf(a);
                     autores.remove(a);
                     model_a.remove(pos);
@@ -876,8 +885,8 @@ public class Painel extends javax.swing.JFrame {
     private void btnCliApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCliApagarActionPerformed
         int id = Integer.parseInt(JOptionPane.showInputDialog("Informe o id para remover o(a) cliente: "));
         try {
-            for(Pessoa c : clientes) {
-                if(c.getId() == id) {
+            for (Pessoa c : clientes) {
+                if (c.getId() == id) {
                     int pos = clientes.indexOf(c);
                     clientes.remove(c);
                     model_c.remove(pos);
@@ -888,31 +897,31 @@ public class Painel extends javax.swing.JFrame {
             Logger.getLogger(Painel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnCliApagarActionPerformed
-    
+
     private void listClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listClientesMouseClicked
         int index = listClientes.locationToIndex(evt.getPoint());
-        
-        if(index >= 0 && index < clientes.size()) {
-            
+
+        if (index >= 0 && index < clientes.size()) {
+
             Pessoa c = (Cliente) clientes.get(index);
-            
+
             String n, s, i;
             n = c.getNome();
             s = c.getSobrenome();
             i = String.valueOf(c.getIdade());
-            
-            if(evt.getClickCount() == 2){
+
+            if (evt.getClickCount() == 2) {
                 cliqueDuplo = true;
-                
+
                 txfCriarPessoaNome.setText(n);
                 txfCriarPessoaSobrenome.setText(s);
                 txfCriarPessoaIdade.setText(i);
                 btnCriarPessoa.setText("Atualizar");
                 janelaTemp1 = Util.addJanelaTemp("Atualizar cliente", 320, 320, true);
-                
+
                 setIdParaAtualizar(c.getId());
                 tipoDePessoa = 1;
-                
+
                 janelaTemp1.add(panelPessoa);
                 janelaTemp1.setVisible(true);
             } else {
@@ -923,40 +932,40 @@ public class Painel extends javax.swing.JFrame {
                             cliqueDuplo = false;
                         } else {
                             JOptionPane.showMessageDialog(rootPane, "Nome: " + n + " " + s + "\n"
-                        + "Idade: " + i);
+                                    + "Idade: " + i);
                         }
-                    }    
+                    }
                 });
                 timer.setRepeats(false);
                 timer.start();
-            } 
+            }
         }
     }//GEN-LAST:event_listClientesMouseClicked
 
     private void listAutoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listAutoresMouseClicked
         int index = listAutores.locationToIndex(evt.getPoint());
-        
-        if(index >= 0 && index < autores.size()) {
-            
+
+        if (index >= 0 && index < autores.size()) {
+
             Pessoa a = (Autor) autores.get(index);
-            
+
             String n, s, i;
             n = a.getNome();
             s = a.getSobrenome();
             i = String.valueOf(a.getIdade());
-            
-            if(evt.getClickCount() == 2){
+
+            if (evt.getClickCount() == 2) {
                 cliqueDuplo = true;
-                
+
                 txfCriarPessoaNome.setText(n);
                 txfCriarPessoaSobrenome.setText(s);
                 txfCriarPessoaIdade.setText(i);
                 btnCriarPessoa.setText("Atualizar");
                 janelaTemp1 = Util.addJanelaTemp("Atualizar autor", 320, 220, true);
-                
+
                 setIdParaAtualizar(a.getId());
                 tipoDePessoa = 0;
-                
+
                 janelaTemp1.add(panelPessoa);
                 janelaTemp1.setVisible(true);
             } else {
@@ -967,40 +976,40 @@ public class Painel extends javax.swing.JFrame {
                             cliqueDuplo = false;
                         } else {
                             JOptionPane.showMessageDialog(rootPane, "Nome: " + n + " " + s + "\n"
-                        + "Idade: " + i);
+                                    + "Idade: " + i);
                         }
-                    }    
+                    }
                 });
                 timer.setRepeats(false);
                 timer.start();
-            } 
+            }
         }
     }//GEN-LAST:event_listAutoresMouseClicked
 
     private void listEditorasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listEditorasMouseClicked
         int id, index = listEditoras.locationToIndex(evt.getPoint());
-        
-        if(index >= 0 && index < editoras.size()) {
-            
+
+        if (index >= 0 && index < editoras.size()) {
+
             Editora e = editoras.get(index);
-            
+
             String n;
             n = e.getNomeDaEditora();
             id = e.getId();
-            
-            if(evt.getClickCount() == 2){
+
+            if (evt.getClickCount() == 2) {
                 cliqueDuplo = true;
-                
+
                 String novo_nome = JOptionPane.showInputDialog(rootPane, "Atualize o nome da editora:", n);
-                
-                for(Editora ed : editoras) {
-                    if(ed.getId() == id) {
+
+                for (Editora ed : editoras) {
+                    if (ed.getId() == id) {
                         ed.setNomeDaEditora(novo_nome);
                         break;
                     }
                 }
                 model_e.clear();
-                for(Editora ed : editoras) {
+                for (Editora ed : editoras) {
                     Util.addAoModeloDeLista(model_e, ed.getId(), ed.getNomeDaEditora());
                 }
             } else {
@@ -1011,48 +1020,48 @@ public class Painel extends javax.swing.JFrame {
                             cliqueDuplo = false;
                         } else {
                             listObrasDaEditora.setModel(model_o);
-                            editora_atual = e;
+                            editoraAtual = e;
                             janelaTemp2 = Util.addJanelaTemp("Obras", 320, 320, true);
                             lblEditNomeDaEditora.setText(n);
                             model_o.clear();
-                            for(Obra o : editora_atual.getObras()) {
+                            for (Obra o : editoraAtual.getObras()) {
                                 Util.addAoModeloDeLista(model_o, o.getId(), o.getTituloDoLivro());
                             }
                             janelaTemp2.add(panelEditora);
                         }
-                    }    
+                    }
                 });
                 timer.setRepeats(false);
                 timer.start();
-            } 
-        }   
+            }
+        }
     }//GEN-LAST:event_listEditorasMouseClicked
 
     private void btnCriarObraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarObraActionPerformed
         String nome_da_obra = txfCriarObraNome.getText();
         int numero_de_paginas = Integer.parseInt(txfCriarObraNumDePags.getText());
-        if(!autores_da_obra_atual.isEmpty() && !nome_da_obra.equals("") && numero_de_paginas > 0){
+        if (!autoresDaObraAtual.isEmpty() && !nome_da_obra.equals("") && numero_de_paginas > 0) {
             String data = String.valueOf(new Date(System.currentTimeMillis()));
             try {
                 ArrayList<Obra> obras = new ArrayList<>();
-                obras.add(new Exemplar(ids.solicitarId(), nome_da_obra, data, numero_de_paginas, autores_da_obra_atual));
-                editora_atual.addObras(obras);              
+                obras.add(new Exemplar(ids.solicitarId(), nome_da_obra, data, numero_de_paginas, autoresDaObraAtual));
+                editoraAtual.addObras(obras);
             } catch (Exception ex1) {
                 Logger.getLogger(Painel.class.getName()).log(Level.SEVERE, null, ex1);
             }
         }
-        
+
         model_o.clear();
-        for(Obra o : editora_atual.getObras()) {
+        for (Obra o : editoraAtual.getObras()) {
             Util.addAoModeloDeLista(model_o, o.getId(), o.getTituloDoLivro());
             System.out.println("Livro: " + o.getTituloDoLivro());
-        }  
-        
+        }
+
         txfCriarObraNome.setText("");
         txfCriarObraAutores.setText("");
         txfCriarObraNumDePags.setText("");
         janelaTemp1.dispose();
-        autores_da_obra_atual.removeAll(autores);
+        autoresDaObraAtual.removeAll(autores);
     }//GEN-LAST:event_btnCriarObraActionPerformed
 
     private void txfCriarObraAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfCriarObraAutoresActionPerformed
@@ -1061,12 +1070,12 @@ public class Painel extends javax.swing.JFrame {
 
     private void listObrasDaEditoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listObrasDaEditoraMouseClicked
         int id, index = listObrasDaEditora.locationToIndex(evt.getPoint());
-        
-        if(index >= 0 && index < editora_atual.getObras().size()) {
-            
-            Exemplar e = (Exemplar) editora_atual.getObras().get(index);
-            indexDoExemplarAtual = editora_atual.getObras().indexOf(e);
-            
+
+        if (index >= 0 && index < editoraAtual.getObras().size()) {
+
+            Exemplar e = (Exemplar) editoraAtual.getObras().get(index);
+            indexDoExemplarAtual = editoraAtual.getObras().indexOf(e);
+
             String numDePaginas, titulo, numDeAutores, dataDePub, numDeExemplares;
 
             titulo = e.getTituloDoLivro();
@@ -1075,78 +1084,78 @@ public class Painel extends javax.swing.JFrame {
             dataDePub = e.getDataDePublicacao();
             numDeExemplares = String.valueOf(e.getNumDeExemplaresDisponiveis());
             id = e.getId();
-            
-            if(evt.getClickCount() == 2){
+
+            if (evt.getClickCount() == 2) {
                 cliqueDuplo = true;
-                
+
                 janelaTemp1 = Util.addJanelaTemp("Atualizar obra", 320, 320, true);
                 janelaTemp1.add(panelAtObra);
-                
+
                 txfAtObraNumDeExemplares.setText(numDeExemplares);
-                exemplar_atual = e;
-                
+                exemplarAtual = e;
+
             } else {
                 Integer timerinterval = (Integer) Toolkit.getDefaultToolkit().getDesktopProperty("awt.multiClickInterval");
                 Timer timer = new Timer(timerinterval.intValue(), new ActionListener() {
                     public void actionPerformed(ActionEvent evt) {
                         if (cliqueDuplo) {
                             cliqueDuplo = false;
-                        } else {                            
-                            JOptionPane.showMessageDialog(rootPane, "Título: " + titulo +
-                                    "\nData de publicação: " + dataDePub +
-                                    "\nNúmero de páginas: " + numDePaginas +
-                                    "\nNúmero de exemplares: " + numDeExemplares +
-                                    "\nNúmero de autores: " + numDeAutores);
+                        } else {
+                            JOptionPane.showMessageDialog(rootPane, "Título: " + titulo
+                                    + "\nData de publicação: " + dataDePub
+                                    + "\nNúmero de páginas: " + numDePaginas
+                                    + "\nNúmero de exemplares: " + numDeExemplares
+                                    + "\nNúmero de autores: " + numDeAutores);
                         }
-                    }    
+                    }
                 });
                 timer.setRepeats(false);
                 timer.start();
-            } 
-        }   
+            }
+        }
     }//GEN-LAST:event_listObrasDaEditoraMouseClicked
 
     private void btnAtObraNumDeExemplaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtObraNumDeExemplaresActionPerformed
         int numDeExemplaresAtual, numDeExemplares, tempCalculo = 0, resultado;
         String operacao = "";
 
-        numDeExemplaresAtual = exemplar_atual.getNumDeExemplaresDisponiveis();
+        numDeExemplaresAtual = exemplarAtual.getNumDeExemplaresDisponiveis();
         numDeExemplares = Integer.parseInt(txfAtObraNumDeExemplares.getText());
 
         resultado = numDeExemplaresAtual;
-        if(numDeExemplares >= 0){
-            if(numDeExemplares > numDeExemplaresAtual) {
+        if (numDeExemplares >= 0) {
+            if (numDeExemplares > numDeExemplaresAtual) {
                 operacao = "adicionar";
                 tempCalculo = numDeExemplares - numDeExemplaresAtual;
 
                 resultado = numDeExemplaresAtual + tempCalculo;
 
-            } else if(numDeExemplares < numDeExemplaresAtual) {
+            } else if (numDeExemplares < numDeExemplaresAtual) {
                 operacao = "remover";
                 tempCalculo = numDeExemplaresAtual - numDeExemplares;
 
                 resultado = numDeExemplaresAtual - tempCalculo;
             }
 
-            if(resultado != numDeExemplaresAtual) {
+            if (resultado != numDeExemplaresAtual) {
                 int resposta = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja "
-                    + operacao + " " + String.valueOf(tempCalculo) + " exemplares? ");
+                        + operacao + " " + String.valueOf(tempCalculo) + " exemplares? ");
 
-                if(resposta == 0) {
-                    exemplar_atual.setNumDeExemplaresDisponiveis(resultado);
+                if (resposta == 0) {
+                    exemplarAtual.setNumDeExemplaresDisponiveis(resultado);
                     JOptionPane.showMessageDialog(rootPane, "Total de exemplares atualizado. O número de exemplares de "
-                        + exemplar_atual.getTituloDoLivro() + " disponíveis agora é: "
-                        + String.valueOf(exemplar_atual.getNumDeExemplaresDisponiveis()));
+                            + exemplarAtual.getTituloDoLivro() + " disponíveis agora é: "
+                            + String.valueOf(exemplarAtual.getNumDeExemplaresDisponiveis()));
                     janelaTemp1.dispose();
                 }
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Este já é o número atual de exemplares. Você pode altera-lo informando"
-                    + " um número maior ou menor para a atualizar a quantidade, mas só se assim preferir...");
+                        + " um número maior ou menor para a atualizar a quantidade, mas só se assim preferir...");
             }
         } else {
             JOptionPane.showMessageDialog(rootPane, "Desculpe! Mas não trabalhamos com números negativos. "
-                + "Por favor, informe-nos o número exato de exemplares que deseja atualizar, que o número "
-                + "atual será incrementado ou decrementado com a diferença entre os valores.");
+                    + "Por favor, informe-nos o número exato de exemplares que deseja atualizar, que o número "
+                    + "atual será incrementado ou decrementado com a diferença entre os valores.");
         }
     }//GEN-LAST:event_btnAtObraNumDeExemplaresActionPerformed
 
@@ -1156,12 +1165,124 @@ public class Painel extends javax.swing.JFrame {
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         janelaTemp1 = Util.addJanelaTemp("Registrar emprestimo", 320, 220, true);
-        //janelaTemp1.add
+        janelaTemp1.add(panelEmprestimos);
+        tipoDeOperacao = 0;
+        btnRegEmprestimo.setText("Registrar");
     }//GEN-LAST:event_jMenuItem7ActionPerformed
-    
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        janelaTemp1 = Util.addJanelaTemp("Remover emprestimo", 320, 220, true);
+        janelaTemp1.add(panelEmprestimos);
+        tipoDeOperacao = 1;
+        btnRegEmprestimo.setText("Remover");
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void btnRegEmprestimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegEmprestimoActionPerformed
+        try {
+            int idDoCliente, idDoExemplar;
+            idDoCliente = Integer.parseInt(txfRegEmprestimoCliente.getText());
+            idDoExemplar = Integer.parseInt(txfRegEmprestimoExemplar.getText());
+
+            boolean c_encontrado = false;
+
+            Cliente c_atual = null;
+            for (Pessoa c : clientes) {
+                if (c.getId() == idDoCliente) {
+                    c_encontrado = true;
+                    c_atual = (Cliente) c;
+                    break;
+                }
+            }
+
+            if (c_encontrado) {
+                if (tipoDeOperacao == 0) {
+                    //REGISTRAR
+                    boolean encontrado = false;
+                    if (c_atual.getEmprestimos().size() < c_atual.getNumMaxDeEmprestimos()) {
+                        Exemplar ex_atual;
+                        for (Editora e : editoras) {
+                            for (Obra o : e.getObras()) {
+                                if (o.getId() == idDoExemplar) {
+                                    encontrado = true;
+                                    int numDeExDisponiveis = o.getNumDeExemplaresDisponiveis();
+                                    if (numDeExDisponiveis > 0) {
+                                        ex_atual = (Exemplar) o;
+
+                                        ArrayList<Exemplar> exemplares = new ArrayList<>();
+                                        exemplares.add(ex_atual);
+                                        try {
+                                            c_atual.registrarEmprestimo(exemplares);
+                                            o.setNumDeExemplaresDisponiveis(numDeExDisponiveis - 1);
+
+                                            JOptionPane.showMessageDialog(rootPane, "Emprestimo realizado com sucesso! "
+                                                    + "Agora há " + String.valueOf(o.getNumDeExemplaresDisponiveis())
+                                                    + " deste mesmo exemplar para serem emprestados.");
+
+                                        } catch (Exception ex) {
+                                            Logger.getLogger(Painel.class.getName()).log(Level.SEVERE, null, ex);
+                                        }
+                                    } else {
+                                        JOptionPane.showMessageDialog(rootPane, "Não há exempares disponíveis para serem emprestados!");
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (!encontrado) {
+                            JOptionPane.showMessageDialog(rootPane, "Exemplar com este id não encontrado!");
+                        }
+                    }
+                } else if (tipoDeOperacao == 1) {
+                    //REMOVER
+                    if (c_atual.getEmprestimos().size() != 0) {
+                        boolean encontrado = false;
+                        int indexDoEmprestimo = -1;
+                        Obra o;
+                        for (int i = 0; i < c_atual.getEmprestimos().size(); i++) {
+                            o = c_atual.getEmprestimos().get(i).getExemplar();
+                            if (o.getId() == idDoExemplar) {
+                                encontrado = true;
+                                indexDoEmprestimo = i;
+                                break;
+                            }
+                        }
+
+                        if (encontrado) {
+                            for (Editora ed : editoras) {
+                                for (Obra obra : ed.getObras()) {
+                                    if (obra.getId() == idDoExemplar) {
+                                        int numDeExDisponiveis = obra.getNumDeExemplaresDisponiveis();
+                                        obra.setNumDeExemplaresDisponiveis(numDeExDisponiveis + 1);
+                                        c_atual.getEmprestimos().remove(indexDoEmprestimo);
+
+                                        JOptionPane.showMessageDialog(rootPane, "Emprestimo devolvido com sucesso! "
+                                                + "Agora há " + String.valueOf(obra.getNumDeExemplaresDisponiveis())
+                                                + " deste mesmo exemplar para serem emprestados.");
+
+                                        break;
+                                    }
+                                }
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(rootPane, "Exemplar com este id não encontrado!");
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "Este cliente não possui emprestimos para devolver!");
+                    }
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "O cliente com este id não existe nos nossos registros.");
+            }
+        } catch (NumberFormatException | HeadlessException ex) {
+            JOptionPane.showMessageDialog(rootPane, "Opps! Parece que a algo errado...");
+        }
+    }//GEN-LAST:event_btnRegEmprestimoActionPerformed
+
     private boolean cliqueDuplo = false, cliqueSimples = false;
     //private int numeroDeCliques = 0;
-    
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1193,15 +1314,15 @@ public class Painel extends javax.swing.JFrame {
             }
         });
     }
-    
+
     private int getIdParaAtualizar() {
         return idParaAtualizar;
     }
-    
+
     private void setIdParaAtualizar(int id) {
         this.idParaAtualizar = id;
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtObraNumDeExemplares;
     private javax.swing.JButton btnAutApagar;

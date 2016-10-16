@@ -29,4 +29,16 @@ public class Cliente extends Pessoa {
             throw new Exception("Você não pode pegar mais do que " 
                     + String.valueOf(numMaxDeEmprestimos) + " livros.");
     }
+    
+    public int getNumMaxDeEmprestimos() {
+        return numMaxDeEmprestimos;
+    }
+    
+    public ArrayList<Emprestimo> getEmprestimos() {
+        return emprestimos;
+    }
+    
+    public void setEmprestimos(ArrayList<Emprestimo> emprestimos) {
+        this.emprestimos = emprestimos;
+    }
 }
