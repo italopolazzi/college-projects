@@ -4,6 +4,7 @@ public class Emprestimo {
 
     private String dataDoEmprestimo;
     private Exemplar exemplar;
+    private int id;
     
     public Emprestimo(Exemplar exemplar, String dataDoEmprestimo) throws Exception {
         if(exemplar.getNumDeExemplaresDisponiveis() > 0){
@@ -21,5 +22,9 @@ public class Emprestimo {
 
     public Exemplar getExemplar() {
         return exemplar;
+    }
+    
+    public int getId() {
+        return id;
     }
 }

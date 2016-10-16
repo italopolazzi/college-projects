@@ -16,7 +16,6 @@ import javax.swing.Timer;
 public class Painel extends javax.swing.JFrame {
 
     //CONFIGURAÇÕES DA EDITORA
-    private Exemplar exemplar_atual;
     private ArrayList<Autor> autores_da_obra_atual = new ArrayList<>();
     private Editora editora_atual;
     
@@ -90,11 +89,6 @@ public class Painel extends javax.swing.JFrame {
         btnCriarPessoa = new javax.swing.JButton();
         tblCriarPessoaSobrenome = new javax.swing.JLabel();
         txfCriarPessoaSobrenome = new javax.swing.JTextField();
-        panelAtObra = new javax.swing.JPanel();
-        btnAtObra = new javax.swing.JButton();
-        lblAtObraNumDeExemplares = new javax.swing.JLabel();
-        txfAtObraNumDeExemplares = new javax.swing.JTextField();
-        btnAtObraNumDeExemplares = new javax.swing.JButton();
         tabPane = new javax.swing.JTabbedPane();
         msgDica = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -409,20 +403,20 @@ public class Painel extends javax.swing.JFrame {
             .addGroup(panelCriarObraLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelCriarObraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txfCriarObraNumDePags)
                     .addComponent(txfCriarObraNome)
                     .addComponent(txfCriarObraAutores)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCriarObraLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(panelCriarObraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnCriarObraAutoresAdd, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                            .addComponent(btnCriarObra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(panelCriarObraLayout.createSequentialGroup()
                         .addGroup(panelCriarObraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblCriarObraNumDePags)
                             .addComponent(lblCriarObraNome)
                             .addComponent(lblCriarObraAutores))
                         .addGap(0, 147, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelCriarObraLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(panelCriarObraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCriarObraAutoresAdd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCriarObra, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(txfCriarObraNumDePags))
                 .addContainerGap())
         );
         panelCriarObraLayout.setVerticalGroup(
@@ -507,55 +501,90 @@ public class Painel extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        btnAtObra.setText("Atualizar");
-        btnAtObra.addActionListener(new java.awt.event.ActionListener() {
+        lblAtualizarObraNome3.setText("Nome da obra:");
+
+        lblAtualizarObraAutores3.setText("Adicionar/remover autor(a) por id:");
+
+        btnAtualizarObraAutoresAdd3.setText("Adicionar");
+        btnAtualizarObraAutoresAdd3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtObraActionPerformed(evt);
+                btnAtualizarObraAutoresAdd3btnAtualizarObraAutoresAddActionPerformed(evt);
             }
         });
 
-        lblAtObraNumDeExemplares.setText("Número de exemplares:");
+        btnAtualizarObra3.setText("Atualizar");
 
-        btnAtObraNumDeExemplares.setText("Alterar");
-        btnAtObraNumDeExemplares.addActionListener(new java.awt.event.ActionListener() {
+        btnAtualizarObraAutoresRemover3.setText("Remover");
+        btnAtualizarObraAutoresRemover3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtObraNumDeExemplaresActionPerformed(evt);
+                btnAtualizarObraAutoresRemover3btnAtualizarObraAutoresRemoverActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout panelAtObraLayout = new javax.swing.GroupLayout(panelAtObra);
-        panelAtObra.setLayout(panelAtObraLayout);
-        panelAtObraLayout.setHorizontalGroup(
-            panelAtObraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAtObraLayout.createSequentialGroup()
+        lblAtualizarObraNumDePags3.setText("Número de páginas:");
+
+        lblAtualizarObraNumDeExemplares3.setText("Número de exemplares:");
+
+        btnAtualizarObraNumDeExemplares3.setText("Atualizar");
+
+        javax.swing.GroupLayout panelAtualizarObra3Layout = new javax.swing.GroupLayout(panelAtualizarObra3);
+        panelAtualizarObra3.setLayout(panelAtualizarObra3Layout);
+        panelAtualizarObra3Layout.setHorizontalGroup(
+            panelAtualizarObra3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAtualizarObra3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelAtObraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelAtObraLayout.createSequentialGroup()
-                        .addComponent(lblAtObraNumDeExemplares)
-                        .addGap(175, 175, 175))
-                    .addGroup(panelAtObraLayout.createSequentialGroup()
-                        .addGroup(panelAtObraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelAtObraLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btnAtObra, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelAtObraLayout.createSequentialGroup()
-                                .addComponent(txfAtObraNumDeExemplares, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnAtObraNumDeExemplares, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())))
+                .addGroup(panelAtualizarObra3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txfAtualizarObraNumDePags3)
+                    .addComponent(txfAtualizarObraNome3)
+                    .addComponent(txfAtualizarObraAutores3)
+                    .addGroup(panelAtualizarObra3Layout.createSequentialGroup()
+                        .addGroup(panelAtualizarObra3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAtualizarObraNome3)
+                            .addComponent(lblAtualizarObraAutores3)
+                            .addComponent(lblAtualizarObraNumDePags3)
+                            .addComponent(lblAtualizarObraNumDeExemplares3))
+                        .addGap(0, 90, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAtualizarObra3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnAtualizarObraAutoresAdd3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAtualizarObraAutoresRemover3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAtualizarObra3Layout.createSequentialGroup()
+                        .addComponent(txfAtualizarObraNumDeExemplares3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelAtualizarObra3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnAtualizarObra3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAtualizarObraNumDeExemplares3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE))))
+                .addContainerGap())
         );
-        panelAtObraLayout.setVerticalGroup(
-            panelAtObraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelAtObraLayout.createSequentialGroup()
+        panelAtualizarObra3Layout.setVerticalGroup(
+            panelAtualizarObra3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelAtualizarObra3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblAtObraNumDeExemplares)
+                .addComponent(lblAtualizarObraNome3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelAtObraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txfAtObraNumDeExemplares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAtObraNumDeExemplares))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAtObra)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(txfAtualizarObraNome3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblAtualizarObraAutores3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txfAtualizarObraAutores3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelAtualizarObra3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAtualizarObraAutoresAdd3)
+                    .addComponent(btnAtualizarObraAutoresRemover3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblAtualizarObraNumDePags3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txfAtualizarObraNumDePags3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblAtualizarObraNumDeExemplares3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelAtualizarObra3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txfAtualizarObraNumDeExemplares3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAtualizarObraNumDeExemplares3))
+                .addGap(24, 24, 24)
+                .addComponent(btnAtualizarObra3)
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -636,10 +665,6 @@ public class Painel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCriarObraAutoresAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCriarObraAutoresAddActionPerformed
-        addAutorAObra();
-    }//GEN-LAST:event_btnCriarObraAutoresAddActionPerformed
-
-    private void addAutorAObra() {
         try {
             int id = Integer.parseInt(txfCriarObraAutores.getText());
             for(Pessoa a : autores) {
@@ -655,8 +680,8 @@ public class Painel extends javax.swing.JFrame {
             Logger.getLogger(Painel.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(rootPane, "Opps! Algo parece errado...");
         }
-    }
-    
+    }//GEN-LAST:event_btnCriarObraAutoresAddActionPerformed
+
     private void menuGerEditorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGerEditorasActionPerformed
         model_e.clear();
         for(Editora e : editoras){
@@ -1021,23 +1046,18 @@ public class Painel extends javax.swing.JFrame {
             
             Exemplar e = (Exemplar) editora_atual.getObras().get(index);
             
-            String numDePaginas, titulo, numDeAutores, dataDePub, numDeExemplares;
-
-            titulo = e.getTituloDoLivro();
-            numDePaginas = String.valueOf(e.getNumDePaginas());
-            numDeAutores = String.valueOf(e.getNumDeAutores());
-            dataDePub = e.getDataDePublicacao();
-            numDeExemplares = String.valueOf(e.getNumDeExemplaresDisponiveis());
+            String n;
+            n = e.getTituloDoLivro();
             id = e.getId();
             
             if(evt.getClickCount() == 2){
                 cliqueDuplo = true;
                 
                 janelaTemp1 = Util.addJanelaTemp("Atualizar obra", 320, 320, true);
-                janelaTemp1.add(panelAtObra);
+                janelaTemp1.add(panelAtualizarObra);
                 
-                txfAtObraNumDeExemplares.setText(numDeExemplares);
-                autores_da_obra_atual = e.getAutores();
+                
+                
                 
             } else {
                 Integer timerinterval = (Integer) Toolkit.getDefaultToolkit().getDesktopProperty("awt.multiClickInterval");
@@ -1045,7 +1065,15 @@ public class Painel extends javax.swing.JFrame {
                     public void actionPerformed(ActionEvent evt) {
                         if (cliqueDuplo) {
                             cliqueDuplo = false;
-                        } else {                            
+                        } else {
+                            String numDePaginas, titulo, numDeAutores, dataDePub, numDeExemplares;
+                            
+                            titulo = e.getTituloDoLivro();
+                            numDePaginas = String.valueOf(e.getNumDePaginas());
+                            numDeAutores = String.valueOf(e.getNumDeAutores());
+                            dataDePub = e.getDataDePublicacao();
+                            numDeExemplares = String.valueOf(e.getNumDeExemplaresDisponiveis());
+                            
                             JOptionPane.showMessageDialog(rootPane, "Título: " + titulo +
                                     "\nData de publicação: " + dataDePub +
                                     "\nNúmero de páginas: " + numDePaginas +
@@ -1060,13 +1088,13 @@ public class Painel extends javax.swing.JFrame {
         }   
     }//GEN-LAST:event_listObrasDaEditoraMouseClicked
 
-    private void btnAtObraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtObraActionPerformed
+    private void btnAtualizarObraAutoresRemover3btnAtualizarObraAutoresRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarObraAutoresRemover3btnAtualizarObraAutoresRemoverActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAtObraActionPerformed
+    }//GEN-LAST:event_btnAtualizarObraAutoresRemover3btnAtualizarObraAutoresRemoverActionPerformed
 
-    private void btnAtObraNumDeExemplaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtObraNumDeExemplaresActionPerformed
-
-    }//GEN-LAST:event_btnAtObraNumDeExemplaresActionPerformed
+    private void btnAtualizarObraAutoresAdd3btnAtualizarObraAutoresAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarObraAutoresAdd3btnAtualizarObraAutoresAddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAtualizarObraAutoresAdd3btnAtualizarObraAutoresAddActionPerformed
     
     private boolean cliqueDuplo = false, cliqueSimples = false;
     //private int numeroDeCliques = 0;
@@ -1112,8 +1140,10 @@ public class Painel extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAtObra;
-    private javax.swing.JButton btnAtObraNumDeExemplares;
+    private javax.swing.JButton btnAtualizarObra;
+    private javax.swing.JButton btnAtualizarObraAutoresAdd;
+    private javax.swing.JButton btnAtualizarObraAutoresRemover;
+    private javax.swing.JButton btnAtualizarObraNumDeExemplares;
     private javax.swing.JButton btnAutApagar;
     private javax.swing.JButton btnAutCriar;
     private javax.swing.JButton btnCliApagar;
@@ -1128,7 +1158,10 @@ public class Painel extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JLabel lblAtObraNumDeExemplares;
+    private javax.swing.JLabel lblAtualizarObraAutores;
+    private javax.swing.JLabel lblAtualizarObraNome;
+    private javax.swing.JLabel lblAtualizarObraNumDeExemplares;
+    private javax.swing.JLabel lblAtualizarObraNumDePags;
     private javax.swing.JLabel lblAutores;
     private javax.swing.JLabel lblClientes;
     private javax.swing.JLabel lblCriarObraAutores;
@@ -1153,7 +1186,7 @@ public class Painel extends javax.swing.JFrame {
     private javax.swing.JMenu menuRegistrar;
     private javax.swing.JMenuBar menubar;
     private javax.swing.JScrollPane msgDica;
-    private javax.swing.JPanel panelAtObra;
+    private javax.swing.JPanel panelAtualizarObra;;
     private javax.swing.JPanel panelAutores;
     private javax.swing.JPanel panelClientes;
     private javax.swing.JPanel panelCriarObra;
@@ -1166,7 +1199,10 @@ public class Painel extends javax.swing.JFrame {
     private javax.swing.JScrollPane scrollEditoras;
     private javax.swing.JTabbedPane tabPane;
     private javax.swing.JLabel tblCriarPessoaSobrenome;
-    private javax.swing.JTextField txfAtObraNumDeExemplares;
+    private javax.swing.JTextField txfAtualizarObraAutores;
+    private javax.swing.JTextField txfAtualizarObraNome;
+    private javax.swing.JTextField txfAtualizarObraNumDeExemplares;
+    private javax.swing.JTextField txfAtualizarObraNumDePags;
     private javax.swing.JTextField txfCriarObraAutores;
     private javax.swing.JTextField txfCriarObraNome;
     private javax.swing.JTextField txfCriarObraNumDePags;

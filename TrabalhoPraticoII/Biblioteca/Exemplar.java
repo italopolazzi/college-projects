@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 public class Exemplar extends Obra {
     
-    public Exemplar(String tituloDoLivro, String dataDePublicacao, int numDePaginas, ArrayList<Autor> autores) throws Exception {
+    public Exemplar(int id, String tituloDoLivro, String dataDePublicacao, int numDePaginas, ArrayList<Autor> autores) throws Exception {
         if(!(autores.size() > 5)){
+            this.id = id;
             this.numDeAutores = autores.size();
             this.tituloDoLivro = tituloDoLivro;
             this.dataDePublicacao = dataDePublicacao;
@@ -48,5 +49,10 @@ public class Exemplar extends Obra {
     @Override
     public void setNumDeExemplaresDisponiveis(int numDeExemplares) {
         numDeExemplaresDisponiveis = numDeExemplares;
+    }
+
+    @Override
+    public int getId() {
+        return id;
     }
 }

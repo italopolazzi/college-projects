@@ -7,7 +7,10 @@ public abstract class Obra {
     protected String tituloDoLivro, dataDePublicacao;
     protected int numDePaginas, numDeAutores, numDeExemplaresDisponiveis;
     protected ArrayList<Autor> autores;
-
+    protected int id;
+    
+    abstract public int getId();
+    
     abstract public String getTituloDoLivro();
     abstract public String getDataDePublicacao();
 
