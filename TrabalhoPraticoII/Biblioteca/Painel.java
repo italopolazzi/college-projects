@@ -16,6 +16,7 @@ import javax.swing.Timer;
 public class Painel extends javax.swing.JFrame {
 
     //CONFIGURAÇÕES DA EDITORA
+    private int indexDoExemplarAtual;
     private Exemplar exemplar_atual;
     private ArrayList<Autor> autores_da_obra_atual = new ArrayList<>();
     private Editora editora_atual;
@@ -91,10 +92,15 @@ public class Painel extends javax.swing.JFrame {
         tblCriarPessoaSobrenome = new javax.swing.JLabel();
         txfCriarPessoaSobrenome = new javax.swing.JTextField();
         panelAtObra = new javax.swing.JPanel();
-        btnAtObra = new javax.swing.JButton();
         lblAtObraNumDeExemplares = new javax.swing.JLabel();
         txfAtObraNumDeExemplares = new javax.swing.JTextField();
         btnAtObraNumDeExemplares = new javax.swing.JButton();
+        panelEmprestimos = new javax.swing.JPanel();
+        lblRegEmprestimoCliente = new javax.swing.JLabel();
+        txfRegEmprestimoCliente = new javax.swing.JTextField();
+        lblRegEmprestimoExemplar = new javax.swing.JLabel();
+        txfRegEmprestimoExemplar = new javax.swing.JTextField();
+        btnRegEmprestimo = new javax.swing.JButton();
         tabPane = new javax.swing.JTabbedPane();
         msgDica = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
@@ -507,16 +513,15 @@ public class Painel extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        btnAtObra.setText("Atualizar");
-        btnAtObra.addActionListener(new java.awt.event.ActionListener() {
+        lblAtObraNumDeExemplares.setText("Número de exemplares:");
+
+        txfAtObraNumDeExemplares.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAtObraActionPerformed(evt);
+                txfAtObraNumDeExemplaresActionPerformed(evt);
             }
         });
 
-        lblAtObraNumDeExemplares.setText("Número de exemplares:");
-
-        btnAtObraNumDeExemplares.setText("Alterar");
+        btnAtObraNumDeExemplares.setText("Atualizar");
         btnAtObraNumDeExemplares.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtObraNumDeExemplaresActionPerformed(evt);
@@ -527,22 +532,16 @@ public class Painel extends javax.swing.JFrame {
         panelAtObra.setLayout(panelAtObraLayout);
         panelAtObraLayout.setHorizontalGroup(
             panelAtObraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelAtObraLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblAtObraNumDeExemplares)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(panelAtObraLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(panelAtObraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelAtObraLayout.createSequentialGroup()
-                        .addComponent(lblAtObraNumDeExemplares)
-                        .addGap(175, 175, 175))
-                    .addGroup(panelAtObraLayout.createSequentialGroup()
-                        .addGroup(panelAtObraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelAtObraLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btnAtObra, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelAtObraLayout.createSequentialGroup()
-                                .addComponent(txfAtObraNumDeExemplares, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnAtObraNumDeExemplares, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())))
+                .addComponent(txfAtObraNumDeExemplares, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAtObraNumDeExemplares, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelAtObraLayout.setVerticalGroup(
             panelAtObraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -553,9 +552,50 @@ public class Painel extends javax.swing.JFrame {
                 .addGroup(panelAtObraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txfAtObraNumDeExemplares, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAtObraNumDeExemplares))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAtObra)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
+
+        panelEmprestimos.setPreferredSize(new java.awt.Dimension(320, 220));
+
+        lblRegEmprestimoCliente.setText("Id do cliente:");
+
+        lblRegEmprestimoExemplar.setText("Id do Exemplar:");
+
+        btnRegEmprestimo.setText("Registrar");
+
+        javax.swing.GroupLayout panelEmprestimosLayout = new javax.swing.GroupLayout(panelEmprestimos);
+        panelEmprestimos.setLayout(panelEmprestimosLayout);
+        panelEmprestimosLayout.setHorizontalGroup(
+            panelEmprestimosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelEmprestimosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelEmprestimosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txfRegEmprestimoCliente)
+                    .addGroup(panelEmprestimosLayout.createSequentialGroup()
+                        .addGroup(panelEmprestimosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblRegEmprestimoCliente)
+                            .addComponent(lblRegEmprestimoExemplar))
+                        .addGap(0, 203, Short.MAX_VALUE))
+                    .addComponent(txfRegEmprestimoExemplar)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEmprestimosLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnRegEmprestimo)))
+                .addContainerGap())
+        );
+        panelEmprestimosLayout.setVerticalGroup(
+            panelEmprestimosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelEmprestimosLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblRegEmprestimoCliente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txfRegEmprestimoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblRegEmprestimoExemplar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txfRegEmprestimoExemplar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addComponent(btnRegEmprestimo)
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -600,6 +640,11 @@ public class Painel extends javax.swing.JFrame {
         menuRegEmprestimo.setText("Emprestimo");
 
         jMenuItem7.setText("Registrar");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         menuRegEmprestimo.add(jMenuItem7);
 
         jMenuItem8.setText("Remover");
@@ -1020,6 +1065,7 @@ public class Painel extends javax.swing.JFrame {
         if(index >= 0 && index < editora_atual.getObras().size()) {
             
             Exemplar e = (Exemplar) editora_atual.getObras().get(index);
+            indexDoExemplarAtual = editora_atual.getObras().indexOf(e);
             
             String numDePaginas, titulo, numDeAutores, dataDePub, numDeExemplares;
 
@@ -1037,7 +1083,7 @@ public class Painel extends javax.swing.JFrame {
                 janelaTemp1.add(panelAtObra);
                 
                 txfAtObraNumDeExemplares.setText(numDeExemplares);
-                autores_da_obra_atual = e.getAutores();
+                exemplar_atual = e;
                 
             } else {
                 Integer timerinterval = (Integer) Toolkit.getDefaultToolkit().getDesktopProperty("awt.multiClickInterval");
@@ -1060,13 +1106,58 @@ public class Painel extends javax.swing.JFrame {
         }   
     }//GEN-LAST:event_listObrasDaEditoraMouseClicked
 
-    private void btnAtObraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtObraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAtObraActionPerformed
-
     private void btnAtObraNumDeExemplaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtObraNumDeExemplaresActionPerformed
+        int numDeExemplaresAtual, numDeExemplares, tempCalculo = 0, resultado;
+        String operacao = "";
 
+        numDeExemplaresAtual = exemplar_atual.getNumDeExemplaresDisponiveis();
+        numDeExemplares = Integer.parseInt(txfAtObraNumDeExemplares.getText());
+
+        resultado = numDeExemplaresAtual;
+        if(numDeExemplares >= 0){
+            if(numDeExemplares > numDeExemplaresAtual) {
+                operacao = "adicionar";
+                tempCalculo = numDeExemplares - numDeExemplaresAtual;
+
+                resultado = numDeExemplaresAtual + tempCalculo;
+
+            } else if(numDeExemplares < numDeExemplaresAtual) {
+                operacao = "remover";
+                tempCalculo = numDeExemplaresAtual - numDeExemplares;
+
+                resultado = numDeExemplaresAtual - tempCalculo;
+            }
+
+            if(resultado != numDeExemplaresAtual) {
+                int resposta = JOptionPane.showConfirmDialog(rootPane, "Tem certeza que deseja "
+                    + operacao + " " + String.valueOf(tempCalculo) + " exemplares? ");
+
+                if(resposta == 0) {
+                    exemplar_atual.setNumDeExemplaresDisponiveis(resultado);
+                    JOptionPane.showMessageDialog(rootPane, "Total de exemplares atualizado. O número de exemplares de "
+                        + exemplar_atual.getTituloDoLivro() + " disponíveis agora é: "
+                        + String.valueOf(exemplar_atual.getNumDeExemplaresDisponiveis()));
+                    janelaTemp1.dispose();
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Este já é o número atual de exemplares. Você pode altera-lo informando"
+                    + " um número maior ou menor para a atualizar a quantidade, mas só se assim preferir...");
+            }
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Desculpe! Mas não trabalhamos com números negativos. "
+                + "Por favor, informe-nos o número exato de exemplares que deseja atualizar, que o número "
+                + "atual será incrementado ou decrementado com a diferença entre os valores.");
+        }
     }//GEN-LAST:event_btnAtObraNumDeExemplaresActionPerformed
+
+    private void txfAtObraNumDeExemplaresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txfAtObraNumDeExemplaresActionPerformed
+
+    }//GEN-LAST:event_txfAtObraNumDeExemplaresActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        janelaTemp1 = Util.addJanelaTemp("Registrar emprestimo", 320, 220, true);
+        //janelaTemp1.add
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
     
     private boolean cliqueDuplo = false, cliqueSimples = false;
     //private int numeroDeCliques = 0;
@@ -1112,7 +1203,6 @@ public class Painel extends javax.swing.JFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAtObra;
     private javax.swing.JButton btnAtObraNumDeExemplares;
     private javax.swing.JButton btnAutApagar;
     private javax.swing.JButton btnAutCriar;
@@ -1125,6 +1215,7 @@ public class Painel extends javax.swing.JFrame {
     private javax.swing.JButton btnEdiCriar;
     private javax.swing.JButton btnEdisApagar;
     private javax.swing.JButton btnEdisCriar;
+    private javax.swing.JButton btnRegEmprestimo;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JTextArea jTextArea1;
@@ -1141,6 +1232,8 @@ public class Painel extends javax.swing.JFrame {
     private javax.swing.JLabel lblEditNomeDaEditora;
     private javax.swing.JLabel lblEditora;
     private javax.swing.JLabel lblEditoras;
+    private javax.swing.JLabel lblRegEmprestimoCliente;
+    private javax.swing.JLabel lblRegEmprestimoExemplar;
     private javax.swing.JList<String> listAutores;
     private javax.swing.JList<String> listClientes;
     private javax.swing.JList<String> listEditoras;
@@ -1159,6 +1252,7 @@ public class Painel extends javax.swing.JFrame {
     private javax.swing.JPanel panelCriarObra;
     private javax.swing.JPanel panelEditora;
     private javax.swing.JPanel panelEditoras;
+    private javax.swing.JPanel panelEmprestimos;
     private javax.swing.JPanel panelPessoa;
     private javax.swing.JScrollPane scrollAutores;
     private javax.swing.JScrollPane scrollClientes;
@@ -1173,5 +1267,7 @@ public class Painel extends javax.swing.JFrame {
     private javax.swing.JTextField txfCriarPessoaIdade;
     private javax.swing.JTextField txfCriarPessoaNome;
     private javax.swing.JTextField txfCriarPessoaSobrenome;
+    private javax.swing.JTextField txfRegEmprestimoCliente;
+    private javax.swing.JTextField txfRegEmprestimoExemplar;
     // End of variables declaration//GEN-END:variables
 }

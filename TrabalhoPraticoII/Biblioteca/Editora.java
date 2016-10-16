@@ -31,7 +31,11 @@ public class Editora {
         for(Obra o : obras){
             this.obras.add(o);
         }
-    }  
+    }
+    
+    public void atualizarObra(int index, Exemplar ex) {
+        obras.set(index, ex);
+    }
     
     public void setNomeDaEditora(String nome) {
         this.nomeDaEditora = nome;
