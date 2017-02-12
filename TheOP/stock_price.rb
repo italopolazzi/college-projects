@@ -51,12 +51,9 @@ def stock_picker array
     end
     vbp bpd, vals, val, ind if alt
   end
-  print array.to_s + "\n"
-  puts bpd
-  puts "-------------------------------------------------"
+  [bpd[:min_pos], bpd[:max_pos]]
 end
 
-
-stock_picker Array.new(12) { rand(1...100) }
-stock_picker [17, 3, 1, 9, 20, 8, 6, 1, 10, 20, 2, 4, 17]
-stock_picker [17, 3, 6, 9, 15, 8, 6, 1, 10]
+puts (stock_picker Array.new(12) { rand(1...100) }).to_s
+puts (stock_picker [17, 3, 1, 9, 20, 8, 6, 1, 10, 20, 2, 4, 17]).to_s
+puts (stock_picker [17, 3, 6, 9, 15, 8, 6, 1, 10]).to_s
