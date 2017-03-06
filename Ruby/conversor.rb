@@ -64,20 +64,20 @@ def converter msg
 			aux[:col].times {|letter|  result << aux[:row].to_s}
 			prev, c_c = c_c, nil
 		}
-		cc = ["]", "|", "~", "´", "[", ";", "!"].rrand
+		cc = " "#["]", "|", "~", "´", "[", ";", "!"].rrand
 		result << cc unless words.last == word
 	}
 	result 
 end
 [
-	"babaca trouxa escroto",
-	"cansei de tanta gente chata",
-	"quem e aqui em paris nao conhecemos",
-	"vou te quebrar todinho",
-	"biscateira",
-	"H linha",
-	"Fuck Fake Friends",
-	"We dont need then"
+	"teste",
+	"cansei",
+	"nao conhecemos",
+	"vou estudar",
+	"biscoito",
+	"linha",
+	"teste teste teste",
+	"We have all"
 ].each do |code|
 	begin
 		p converter code

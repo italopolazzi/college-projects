@@ -60,7 +60,7 @@ end
 puts (stock_picker Array.new(12) { rand(1...100) }).to_s
 puts (stock_picker [17, 3, 1, 9, 20, 8, 6, 1, 10, 20, 2, 4, 17]).to_s
 puts (stock_picker [17, 3, 6, 9, 15, 8, 6, 1, 10]).to_s
-<<<<<<< HEAD:TheOP/Ruby/Part1/stock_price.rb
+# <<<<<<< HEAD:TheOP/Ruby/Part1/stock_price.rb
 
-=======
->>>>>>> 5cb27917a0e05106536bd2d32dd55d9f8237fb6f:TheOP/stock_price.rb
+# =======
+# >>>>>>> 5cb27917a0e05106536bd2d32dd55d9f8237fb6f:TheOP/stock_price.rb

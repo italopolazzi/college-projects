@@ -1,8 +1,8 @@
-class Einheimische:
+class Native:
   def __init__(self, name):
-    self.beschimpfungen(name)
-  def beschimpfungen(self, name):
+    self.test(name)
+  def test(self, name):
     print(name)
 
-ein_ = Einheimische("Hundin")
+ein_ = Native("Hunpin")
 		
