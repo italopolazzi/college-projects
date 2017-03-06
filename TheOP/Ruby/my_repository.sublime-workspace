@@ -1,0 +1,1175 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sel",
+				"self"
+			],
+			[
+				"l",
+				"lnode"
+			],
+			[
+				"arr",
+				"arr"
+			],
+			[
+				"b",
+				"bt"
+			],
+			[
+				"tr",
+				"tree"
+			],
+			[
+				"st",
+				"str"
+			],
+			[
+				"_",
+				"_depth"
+			],
+			[
+				"chil",
+				"childs"
+			],
+			[
+				"ch",
+				"childs"
+			],
+			[
+				"add",
+				"add_r"
+			],
+			[
+				"par",
+				"parent"
+			],
+			[
+				"child",
+				"childs"
+			],
+			[
+				"pa",
+				"parent"
+			],
+			[
+				"node",
+				"Node"
+			],
+			[
+				"value",
+				"values"
+			],
+			[
+				"rem",
+				"remove_at"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"ne",
+				"next_node"
+			],
+			[
+				"sobre",
+				"sobrenome"
+			],
+			[
+				"app",
+				"append"
+			],
+			[
+				"ta",
+				"tail"
+			],
+			[
+				"con",
+				"contains"
+			],
+			[
+				"mer",
+				"merge_sort"
+			],
+			[
+				"inc",
+				"include"
+			],
+			[
+				"sc",
+				"script"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"to_s",
+				"to_json"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"ba",
+				"basic_request"
+			],
+			[
+				"get",
+				"get_request"
+			],
+			[
+				"mo",
+				"mount_post_request"
+			],
+			[
+				"pra",
+				"params"
+			],
+			[
+				"request",
+				"request_method"
+			],
+			[
+				"fin",
+				"filename"
+			],
+			[
+				"repon",
+				"response"
+			],
+			[
+				"file",
+				"file_size"
+			],
+			[
+				"header",
+				"headers"
+			],
+			[
+				"se",
+				"set_body"
+			],
+			[
+				"res",
+				"response"
+			],
+			[
+				"cli",
+				"client"
+			],
+			[
+				"clie",
+				"client"
+			],
+			[
+				"sever",
+				"server"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"chra",
+				"charc"
+			],
+			[
+				"each_with",
+				"each_with_index"
+			],
+			[
+				"each_e",
+				"each_with_index"
+			],
+			[
+				"each_w",
+				"each_with_index"
+			],
+			[
+				"wo",
+				"word"
+			],
+			[
+				"In",
+				"InvalidCaractere"
+			],
+			[
+				"co",
+				"count"
+			],
+			[
+				"to",
+				"to_sym"
+			],
+			[
+				"ca",
+				"caractere"
+			],
+			[
+				"pla",
+				"playing"
+			],
+			[
+				"load",
+				"load_game"
+			],
+			[
+				"dow",
+				"downcase"
+			],
+			[
+				"be",
+				"between"
+			],
+			[
+				"do",
+				"downcase"
+			],
+			[
+				"cho",
+				"chomp"
+			],
+			[
+				"cre",
+				"create_player"
+			],
+			[
+				"sp",
+				"special_msg"
+			],
+			[
+				"mi",
+				"misses"
+			],
+			[
+				"fil",
+				"filename"
+			],
+			[
+				"er",
+				"erb_template"
+			],
+			[
+				"nam",
+				"name"
+			],
+			[
+				"zip",
+				"zipcode"
+			],
+			[
+				"to_",
+				"to_json"
+			],
+			[
+				"prin",
+				"print_"
+			],
+			[
+				"ini",
+				"initialize"
+			],
+			[
+				"n",
+				"name"
+			],
+			[
+				"per",
+				"persons"
+			],
+			[
+				"ma",
+				"matrix"
+			],
+			[
+				"cha",
+				"changing_turn"
+			],
+			[
+				"perso",
+				"persons"
+			],
+			[
+				"blo",
+				"block"
+			],
+			[
+				"my",
+				"my_each"
+			],
+			[
+				"Enu",
+				"Enumerable"
+			],
+			[
+				"max",
+				"max_p"
+			],
+			[
+				"va",
+				"values"
+			],
+			[
+				"v_",
+				"v_min"
+			],
+			[
+				"v",
+				"v_max"
+			],
+			[
+				"v_min",
+				"v_min_pos"
+			],
+			[
+				"sim",
+				"sim2"
+			],
+			[
+				"lot",
+				"lot3"
+			],
+			[
+				"lots",
+				"lotsLimit"
+			],
+			[
+				"si",
+				"sims"
+			],
+			[
+				"ava",
+				"available_stores"
+			],
+			[
+				"product",
+				"products"
+			],
+			[
+				"availa",
+				"available_stores"
+			],
+			[
+				"img",
+				"img_src"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"over",
+				"overflow-wrap"
+			],
+			[
+				"ajax",
+				"ajaxComplete"
+			],
+			[
+				"su",
+				"subk"
+			],
+			[
+				"produ",
+				"products"
+			],
+			[
+				"pr",
+				"products_page"
+			],
+			[
+				"ss",
+				"ss_ctn"
+			],
+			[
+				"stores",
+				"stores_container"
+			],
+			[
+				"tran",
+				"transition"
+			],
+			[
+				"rol_r",
+				"rol_right"
+			],
+			[
+				"find",
+				"find_ancestor"
+			],
+			[
+				"pro",
+				"product"
+			],
+			[
+				"p",
+				"product_expand"
+			],
+			[
+				"he",
+				"header\tTag"
+			],
+			[
+				"pare",
+				"parent_change"
+			],
+			[
+				"rol",
+				"rol_left"
+			],
+			[
+				"s",
+				"stores"
+			],
+			[
+				"a",
+				"attr_bef"
+			],
+			[
+				"o",
+				"objectThis"
+			],
+			[
+				"obj",
+				"obj1"
+			],
+			[
+				"attrs",
+				"attrs_before"
+			],
+			[
+				"di",
+				"display_size"
+			],
+			[
+				"box",
+				"box-sizing"
+			],
+			[
+				"up",
+				"update"
+			],
+			[
+				"store",
+				"store_params"
+			],
+			[
+				"pri",
+				"primary_color_dark"
+			],
+			[
+				"flex-r",
+				"flex-wrap"
+			],
+			[
+				"flex",
+				"flex-flow"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"fle",
+				"flex-start"
+			],
+			[
+				"al",
+				"align-items"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"mari",
+				"margin"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "tester.rb",
+			"settings":
+			{
+				"buffer_size": 1687,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "b = [2,3,4,5]"
+			}
+		},
+		{
+			"file": "/home/itpzzi/DEV/GIT/MeuRepositorio/Python/hallo_welt.py",
+			"settings":
+			{
+				"buffer_size": 161,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "print(\"Hallo!\")"
+			}
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "insta",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 188.0,
+		"history":
+		[
+			"install emmet",
+			"emmet",
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/tester.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Book/file.txt",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/Ruby/discador.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part8/BinaryTree/binary_tree.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/Ruby/conversor.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/my_tree.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part7/LinkedLists/linked_list.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part6/MergeSort/merge_sort.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part6/Fibonacci/fib.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part5/Sockets/mod_server.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part5/Sockets/mod_browser.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part5/Sockets/script.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/remember.c",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part5/Sockets/thanks.html.erb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part5/Sockets/thanks.html",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part5/Sockets/utils.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part5/Sockets/config.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part5/Sockets/server.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part5/Sockets/client.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part5/Sockets/index.html",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part5/Sockets/browser.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part5/Sockets/tiny_browser.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part1/caesar_cipher/caesar_cipher.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/Ruby/my_module.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part4/handman/lib/handman.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part4/yaml_serialization.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part4/handman/handman.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Book/append.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part4/event_manager/lib/event_manager.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part2/enumerable_methods.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Book/reader.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part4/event_manager/form_letter.html.erb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part4/event_manager/form_letter.html",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part4/json_serialization.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part3/tic_tac_toe/person.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part3/tic_tac_toe/validation.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part3/tic_tac_toe/tic_tac_toe.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part3/tic_tac_toe/main.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/Ruby/string_colorize.rb",
+		"/home/itpzzi/Área de Trabalho/temp.rb",
+		"/home/itpzzi/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/Ruby/MyMatrix/main.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part3/tic_tac_toe/temp2.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part3/tic_tac_toe/temp.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part3/tic_tac_toe/array.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part3/tic_tac_toe/verify.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/Ruby/MyMatrix/classes.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part2/bubble_sort.rb",
+		"/home/itpzzi/DEV/GIT/MeuRepositorio/TheOP/Ruby/Part2/Enumerable.rb",
+		"/home/itpzzi/Área de Trabalho/Ruby_Codes/TheOdinProject/stock_price.rb",
+		"/home/itpzzi/Área de Trabalho/bpd.rb",
+		"/home/itpzzi/Área de Trabalho/bpd2.rb",
+		"/home/itpzzi/DEV/Ruby/theSims/main.rb",
+		"/home/itpzzi/DEV/Ruby/theSims/people.rb",
+		"/home/itpzzi/DEV/Ruby/theSims/client.rb",
+		"/home/itpzzi/DEV/Ruby/theSims/family.rb",
+		"/home/itpzzi/Área de Trabalho/theSims/main.rb",
+		"/home/itpzzi/Área de Trabalho/theSims/client.rb",
+		"/home/itpzzi/Área de Trabalho/theSims/lot.rb",
+		"/home/itpzzi/Área de Trabalho/theSims/map.rb",
+		"/home/itpzzi/Área de Trabalho/theSims/people.rb",
+		"/home/itpzzi/Área de Trabalho/theSims/sim.rb",
+		"/home/itpzzi/Área de Trabalho/theSims/family.rb",
+		"/home/itpzzi/Área de Trabalho/theSims/Main.rb",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/db/seeds.rb",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/database/parents.json",
+		"/home/itpzzi/theSims/Client.rb",
+		"/home/itpzzi/DEV/GIT/DarkPOOwer/BitBucket/Italo/dark-power/RMI/Communication/src/communication/Match.java",
+		"/home/itpzzi/DEV/GIT/DarkPOOwer/BitBucket/Italo/dark-power/RMI/Client/src/client/MainClient.java",
+		"/home/itpzzi/RMI/rmibasico/Server.java",
+		"/home/itpzzi/RMI/rmibasico/Main.java",
+		"/home/itpzzi/RMI/rmibasico/Service.java",
+		"/home/itpzzi/RMI/rmibasico/Client.java",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/controllers/parents_controller.rb",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/models/parent.rb",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/config/routes.rb",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/views/parents/_products.html.erb",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/views/parents/_selectors.html.erb",
+		"/home/itpzzi/DEV/GIT/Master/PriceWatch/app/data_inference.py",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/views/products/_products.html.erb",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/models/store.rb",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/models/product.rb~",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/models/product.rb",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/assets/stylesheets/application.scss",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/views/products/_products.html.erb~",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/views/products/index.html.erb",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/config/locales/en.yml",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/config/locales/pt-BR.yml",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/config/mongoid.yml",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/assets/stylesheets/_selectors.scss",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/views/products/_selectors.html.erb",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/assets/stylesheets/_palette.scss",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/assets/stylesheets/_products.scss",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/app/assets/javascripts/application.js",
+		"/home/itpzzi/DEV/Rails/Portfolio/config/application.rb",
+		"/home/itpzzi/DEV/Rails/Portfolio/app/assets/stylesheets/application.scss",
+		"/home/itpzzi/DEV/Rails/Portfolio/app/controllers/application_controller.rb",
+		"/home/itpzzi/DEV/Rails/Portfolio/config/locales/en.yml",
+		"/home/itpzzi/DEV/Rails/Portfolio/config/locales/pt-BR.yml",
+		"/home/itpzzi/DEV/Rails/Portfolio/app/controllers/welcome_controller.rb",
+		"/home/itpzzi/DEV/Rails/Portfolio/config/routes.rb",
+		"/home/itpzzi/DEV/Rails/Portfolio/app/assets/stylesheets/application.css",
+		"/home/itpzzi/DEV/GIT/Portfolio/app/assets/stylesheets/welcome.scss",
+		"/home/itpzzi/DEV/GIT/Portfolio/config/routes.rb",
+		"/home/itpzzi/DEV/GIT/Portfolio/app/views/welcome/index.html.erb",
+		"/home/itpzzi/DEV/GIT/Portfolio/app/assets/stylesheets/application.css",
+		"/home/itpzzi/DEV/GIT/Portfolio/app/assets/javascripts/application.js",
+		"/home/itpzzi/DEV/GIT/Portfolio/Gemfile",
+		"/home/itpzzi/DEV/GIT/Portfolio/Gemfile.lock",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/vendor/assets/stylesheets/bootstrap.min.css",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/vendor/assets/stylesheets/bootstrap.css",
+		"/home/itpzzi/DEV/GIT/pricewatchfrontend/PriceWatchFronted/vendor/assets/javascripts/bootstrap.js",
+		"/home/itpzzi/DEV/GIT/Portfolio/app/helpers/welcome_helper.rb",
+		"/home/itpzzi/DEV/GIT/Portfolio/app/helpers/application_helper.rb",
+		"/home/itpzzi/DEV/GIT/Italo_03112016/PriceWatch/pwdesign/PriceWatch/app/assets/stylesheets/application.scss",
+		"/home/itpzzi/DEV/GIT/Italo_03112016/PriceWatch/pwdesign/PriceWatch/app/views/products/_selectors.html.erb",
+		"/home/itpzzi/DEV/GIT/Italo_03112016/PriceWatch/pwdesign/PriceWatch/app/controllers/application_controller.rb",
+		"/home/itpzzi/DEV/GIT/Italo_03112016/PriceWatch/pwdesign/PriceWatch/app/views/products/index.html.erb",
+		"/home/itpzzi/DEV/GIT/Italo_03112016/PriceWatch/pwdesign/PriceWatch/app/assets/javascripts/application.js",
+		"/home/itpzzi/DEV/GIT/Italo_03112016/PriceWatch/pwdesign/PriceWatch/app/assets/stylesheets/application.css",
+		"/home/itpzzi/DEV/GIT/Italo_03112016/PriceWatch/pwdesign/PriceWatch/config/locales/pt-BR.yml",
+		"/home/itpzzi/DEV/GIT/Italo_03112016/PriceWatch/pwdesign/PriceWatch/config/application.rb",
+		"/home/itpzzi/DEV/GIT/Italo_03112016/PriceWatch/pwdesign/PriceWatch/app/views/products/_products.html.erb",
+		"/home/itpzzi/DEV/GIT/Italo_03112016/PriceWatch/pwdesign/PriceWatch/app/helpers/products_helper.rb",
+		"/home/itpzzi/DEV/GIT/Italo_03112016/PriceWatch/pwdesign/PriceWatch/config/locales/en.yml",
+		"/home/itpzzi/DEV/GIT/Italo_03112016/PriceWatch/pwdesign/PriceWatch/app/models/product.rb",
+		"/home/itpzzi/DEV/GIT/Italo_03112016/PriceWatch/pwdesign/PriceWatch/app/models/storage.rb",
+		"/home/itpzzi/DEV/GIT/Italo_03112016/PriceWatch/pwdesign/PriceWatch/config/routes.rb"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"node",
+			"B",
+			"Einheimische",
+			"self.too_s",
+			"elternteil",
+			"wert",
+			"aux",
+			"height_right",
+			"height_left",
+			"childs_nil",
+			"hr",
+			"hl",
+			"parent",
+			"root",
+			"aux",
+			"v[",
+			"aux",
+			"value",
+			"values",
+			"create_node",
+			"next",
+			"to_i",
+			"get_request",
+			"base_request",
+			"mount_post_request",
+			"mount_get_request",
+			"req",
+			"converter",
+			"temp",
+			"word",
+			"words",
+			"letter",
+			"p_c",
+			"prev_caractere",
+			"current_caractere",
+			"dig",
+			"caractere",
+			"x_caractere",
+			"exit",
+			"Protection",
+			"show_winner",
+			"@winner",
+			"verify",
+			", ",
+			"verify",
+			"value",
+			"hash",
+			"hash[:max_pos]",
+			"hash[:min_pos]",
+			"hash[:value]",
+			"index",
+			"vbp",
+			"bpd",
+			"best_profit_data",
+			"sum",
+			"num",
+			"sim",
+			"Sim",
+			"sim",
+			"height",
+			"width",
+			"info",
+			"def ",
+			"patt",
+			"pat",
+			"%>\n",
+			"'Raleway'",
+			"'Raleway',",
+			"\"Raleway\"",
+			"</h1>",
+			"<h1>",
+			"fim",
+			"$",
+			"#FFFFFF",
+			"#286090",
+			".btn-primary",
+			"collapse.in",
+			"$divider_color",
+			"#BDBDBD",
+			"primary_color_dark",
+			"#3d3d3d",
+			"#fafafa",
+			"#757575",
+			"#212121",
+			"#5c6bc0",
+			"#796bc5",
+			"\".products\"",
+			"\".selectors\"",
+			"animateBefore",
+			", remote: true",
+			").to_s",
+			"request",
+			"\" + url + \"&",
+			"/?",
+			"href='",
+			"product_middle",
+			"$(\".box\")",
+			"$this",
+			"'",
+			"product_found_stores",
+			"150px",
+			"number_of_pages",
+			"quant",
+			"fl",
+			"div_pages",
+			"num_pages",
+			"titleize",
+			"p",
+			"$(this)",
+			"this",
+			"element",
+			"button",
+			"direction",
+			"cntn",
+			"button",
+			"outerw",
+			"width",
+			"container",
+			"store_container",
+			"\")),\n",
+			"store_right_margin",
+			"store_left_margin",
+			"container_parent_button",
+			"p.",
+			"p_",
+			"p.",
+			"p_",
+			"store_"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"to_ss",
+			"parent",
+			"value",
+			"node",
+			"hr",
+			"hl",
+			"height_right",
+			"height_left",
+			"root",
+			"node",
+			"root",
+			"vals[",
+			"v[1]",
+			"v[0]",
+			"vals",
+			"Node.new",
+			"next_node",
+			"basic_request",
+			"base",
+			"post_request",
+			"get_request",
+			"request",
+			"discador",
+			"c_c",
+			"aux",
+			"w",
+			"ws",
+			"dig",
+			"p_c",
+			"c_c",
+			"prev_caractere",
+			"current_caractere",
+			"dig",
+			"quit",
+			"Protected",
+			"show_result",
+			"@result",
+			"to_verify",
+			"scan",
+			",",
+			"vbp",
+			"val",
+			"bpd",
+			"b_max_pos",
+			"b_min_pos",
+			"b_value",
+			"pos",
+			"verify",
+			"hash",
+			"bpd",
+			"adder",
+			"code",
+			"people",
+			"People",
+			"people",
+			"y",
+			"x",
+			"data",
+			"def get_",
+			"def set_",
+			"'Raleway', 'Helvetica', sans-serif",
+			"'Raleway', 'Helvetica',",
+			"'Raleway'",
+			"",
+			"cs",
+			"",
+			"#286090",
+			"#FFFFFF",
+			"$divider_color",
+			"primary_color_light",
+			"$primary_color_dark",
+			"$light_color",
+			"$secondary_text_color",
+			"$accent_color",
+			"ps",
+			"ss",
+			"animateAfter",
+			"",
+			", remote: true).to_s",
+			"remote: true, request",
+			"?",
+			"&",
+			"href='\" + url + \"",
+			"href='\" + url + \"'",
+			"p_middle",
+			"product_middle",
+			"t",
+			"\"",
+			"product_middle",
+			"num_pages",
+			"per_page",
+			"decimal",
+			"num_pages",
+			"num_items",
+			"span",
+			"elm1",
+			"",
+			"elm1",
+			"elem",
+			"btn",
+			"dirct",
+			"cnt",
+			"btn",
+			"outerWidth",
+			"w",
+			"cntn",
+			"stores_container",
+			"store_margin_right",
+			"store_margin_left",
+			"product.",
+			"product_",
+			"store.",
+			"store_",
+			"selector_",
+			"store_",
+			"s_",
+			"p",
+			"<h1 class=\"product_feature\"",
+			"p",
+			"li",
+			"\"",
+			"_"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "tester.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1687,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								196,
+								196
+							]
+						],
+						"settings":
+						{
+							"auto_name": "b = [2,3,4,5]",
+							"history_list_is_closing": true,
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 1,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/itpzzi/DEV/GIT/MeuRepositorio/Python/hallo_welt.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 161,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								161,
+								161
+							]
+						],
+						"settings":
+						{
+							"auto_name": "print(\"Hallo!\")",
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 167.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "my_repository.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"dis",
+				"Ruby/discador.rb"
+			],
+			[
+				"file",
+				"TheOP/Ruby/Book/file.txt"
+			],
+			[
+				"tester",
+				"TheOP/Ruby/tester.rb"
+			],
+			[
+				"matrix",
+				"Ruby/MyMatrix/main.rb"
+			],
+			[
+				"exit",
+				"tmp/cache/assets/sprockets/v3.0/eD/eDXb9ak7PKBIXz59cFa_x3mng5oMH9SUOTxHnLS_znc.cache"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 247.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
