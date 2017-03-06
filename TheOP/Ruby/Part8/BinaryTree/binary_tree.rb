@@ -47,14 +47,44 @@ class BinaryTree
 	end
 
 	#	Imcomplete
-	def dfs value, stack=[@root]
-		until stack.empty? do
-		   node = stack.pop
-		   return node if node.value == value
-		   stack << node.left if node.left
-		   stack << node.right if node.right
+	# def dfs value, stack=[@root]
+	# 	until stack.empty? do
+	# 	   node = stack.pop
+	# 	   return node if node.value == value
+	# 	   stack << node.left if node.left
+	# 	   stack << node.right if node.right
+	# 	end
+	# 	nil
+	# end
+
+	def dfs value, mode=:ldr, stack=[], visited=[]
+		node = @root
+		until node.nil? and stack.empty?
+			if mode==:ldr
+				unless node.nil? or visited.include? node.left
+					stack << node
+					node = node.left
+				else
+					node = stack.pop
+					return if node.nil?
+					node.value == value ? (return node) : (visited << node)
+					node = node.right
+				end
+			elsif mode==:rld
+				# if not node.nil? or not visited.include? node
+				# 	stack << node
+				# 	node = node.left
+				# elsif visited.include? node.right
+				# 	node = node.right
+				# else
+				# 	node = stack.pop
+				# 	return if node.nil?
+				# 	node.value == value ? (return node) : (visited << node)
+				# end
+			elsif mode==:dlr
+
+			end
 		end
-		nil
 	end
 
 	#	Imcomplete
@@ -77,4 +107,4 @@ class BinaryTree
 end
 tree = ["F","B","G","A","D","I","C","E","H"].build_tree
 
-tree.dfs_rec("B")
+puts tree.dfs("H", :rld).inspect
