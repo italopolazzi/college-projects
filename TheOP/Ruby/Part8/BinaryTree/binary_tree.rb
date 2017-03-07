@@ -46,17 +46,6 @@ class BinaryTree
 		end
 	end
 
-	#	Imcomplete
-	# def dfs value, stack=[@root]
-	# 	until stack.empty? do
-	# 	   node = stack.pop
-	# 	   return node if node.value == value
-	# 	   stack << node.left if node.left
-	# 	   stack << node.right if node.right
-	# 	end
-	# 	nil
-	# end
-
 	def dfs value, mode=:ldr, stack=[], visited=[]
 		node = @root
 		until node.nil? and stack.empty?
@@ -71,29 +60,50 @@ class BinaryTree
 					node = node.right
 				end
 			elsif mode==:rld
-				# if not node.nil? or not visited.include? node
-				# 	stack << node
-				# 	node = node.left
-				# elsif visited.include? node.right
-				# 	node = node.right
-				# else
-				# 	node = stack.pop
-				# 	return if node.nil?
-				# 	node.value == value ? (return node) : (visited << node)
-				# end
+				if (!node.nil? and !visited.include? node.right and !visited.include? node.left)
+					stack << node
+					node = node.left
+				else
+					(node = stack.pop) if node.nil?
+					if visited.include? node
+						return node if node.value == value
+						node = stack.pop
+						next
+					end
+					stack << node
+					visited << node
+					node = node.right
+				end
 			elsif mode==:dlr
-
+				unless node.nil? or visited.include? node.left
+					node.value == value ? (return node) : (visited << node)
+					stack << node
+					node = node.left
+				else
+					node = stack.pop
+					node = node.right
+				end
 			end
 		end
 	end
 
-	#	Imcomplete
-	def dfs_rec value, node=@root
-		return unless node
-		puts "Node: #{node.value}"
-		return node if node.value==value
-		dfs_rec value, node.left
-		dfs_rec value, node.right
+	def dfs_rec value, mode=:rld
+		# Common lines in dfs recursive functions
+		lines = {
+			l: Proc.new {|value, node, mode| procsss value, mode, node.left },
+			r: Proc.new {|value, node, mode| procsss value, mode, node.right },
+			d: Proc.new {|value, node| return node if node.value == value }
+		}
+		
+		# Extracts and mounts an array with the correct sequence of search, based in the chosen mode
+		modes = {
+			rld: [lines[:l], lines[:r], lines[:d]],
+			dlr: [lines[:d], lines[:l], lines[:r]],
+			ldr: [lines[:l], lines[:d], lines[:r]]
+		}
+		
+		puts "Mode: #{mode}"
+		procsss value, modes[mode]
 	end
 
 	private
@@ -104,7 +114,58 @@ class BinaryTree
 			node.left, node.right = self.tree(l, node), self.tree(r, node)
 			node
 		end
-end
-tree = ["F","B","G","A","D","I","C","E","H"].build_tree
 
-puts tree.dfs("H", :rld).inspect
+		def procsss value, mode, node=@root
+			return unless node; puts "Passing in: #{node.value}"
+			mode.each {|m| m.(value, node, mode)}
+		end
+end
+
+#######################################################################################################################
+	# TESTS
+#######################################################################################################################
+
+arr = ["F","B","G","A","D","I","C","E","H"]
+tree = arr.build_tree
+
+def tests arr, tree
+	puts "Depth: #{tree.depth}"
+
+	puts "Test with:"
+	puts "1 - bfs"
+	puts "2 - dfs"
+	puts "3 - dfs_rec"
+	res = gets.chomp.to_i
+
+	# Tests with bfs function
+	if res == 1
+		no = tree.bfs("A")
+		puts no.value if no
+	
+	# Tests with dfs without recursion
+	elsif res == 2
+		arr.each do |l| 
+			if no = tree.dfs(l, :dlr)
+				#puts "Parent: #{no.parent.value}" if no.parent
+				puts "No: #{no.value}"
+				#puts "Left: #{no.left.value}" if no.left
+				#puts "Right: #{no.right.value}" if no.right
+				puts
+			end	
+		end
+
+	# Tests of dfs with recursion (dfs_rec)
+	elsif res == 3
+		
+		[:ldr, :dlr, :rld].each do |mode|
+			no = tree.dfs_rec("F", mode)
+			puts "No: #{no.value}" if no
+			puts
+		end
+	else
+		puts "Invalid option!"
+	end
+end
+
+tests arr, tree
+
